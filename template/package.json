@@ -1,0 +1,34 @@
+{
+  "name": "{{name}}",
+  "version": "0.0.1",
+  "description": "{{description}}",
+  "scripts": {
+    {{#if ts}}
+    "build": "npx rollup -c build/index.ts --configPlugin typescript --bundleConfigAsCjs",
+    {{else}}
+    "build": "npx rollup -c build/index.js",
+    {{/if}}
+    "build:sit": "cross-env ENV=sit npm run build",
+    "build:pre": "cross-env ENV=pre npm run build",
+    "build:prd": "cross-env ENV=prd npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    {{#if ts}}
+    "typescript": "^5.2.2",
+    "@rollup/plugin-typescript": "^11.1.5",
+    {{/if}}
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-json": "^6.0.1",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.4",
+    "@rollup/plugin-terser": "^0.4.4",
+    "cross-env": "^7.0.3",
+    "rollup": "^4.1.4"
+  }
+}

@@ -1,0 +1,1 @@
+localStorage.setItem('CUPSHE_VERSION', JSON.stringify(process.env.VERSIONS))

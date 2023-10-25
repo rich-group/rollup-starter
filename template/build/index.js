@@ -1,0 +1,1 @@
+module.exports = require(`./rollup.config.${process.env.ENV}.js`)
