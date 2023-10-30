@@ -1,1 +1,1 @@
-module.exports = require('./rollup.config.base.js')
+module.exports = require('./rollup.config.base.ts')
