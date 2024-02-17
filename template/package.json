@@ -20,6 +20,7 @@
     "typescript": "^5.2.2",
     "@rollup/plugin-typescript": "^11.1.5",
     {{/if}}
+    "webpack-merge": "^5.10.0",
     "@babel/core": "^7.23.2",
     "@babel/preset-env": "^7.23.2",
     "@rollup/plugin-babel": "^6.0.4",

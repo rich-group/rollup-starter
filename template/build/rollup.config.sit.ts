@@ -1,1 +1,4 @@
-module.exports = require('./rollup.config.base.ts')
+import baseConfig from './rollup.config.base';
+import { merge } from 'webpack-merge';
+
+export default merge(baseConfig, {})
