@@ -4,13 +4,14 @@
   "description": "{{description}}",
   "scripts": {
     {{#if ts}}
-    "build": "npx rollup -c build/index.ts --configPlugin typescript --bundleConfigAsCjs",
+    "build:sit": "npx rollup -c build/rollup.config.sit.ts --configPlugin typescript --bundleConfigAsCjs",
+    "build:pre": "npx rollup -c build/rollup.config.pre.ts --configPlugin typescript --bundleConfigAsCjs",
+    "build:prd": "npx rollup -c build/rollup.config.prd.ts --configPlugin typescript --bundleConfigAsCjs"
     {{else}}
-    "build": "npx rollup -c build/index.js",
+    "build:sit": "npx rollup -c build/rollup.config.sit.js",
+    "build:pre": "npx rollup -c build/rollup.config.pre.js",
+    "build:prd": "npx rollup -c build/rollup.config.prd.js"
     {{/if}}
-    "build:sit": "cross-env ENV=sit npm run build",
-    "build:pre": "cross-env ENV=pre npm run build",
-    "build:prd": "cross-env ENV=prd npm run build"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +19,8 @@
   "devDependencies": {
     {{#if ts}}
     "typescript": "^5.2.2",
+    "@types/node": "^20.11.19",
+    "tslib": "^2.6.2",
     "@rollup/plugin-typescript": "^11.1.5",
     {{/if}}
     "webpack-merge": "^5.10.0",
