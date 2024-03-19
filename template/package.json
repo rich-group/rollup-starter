@@ -4,13 +4,13 @@
   "description": "{{description}}",
   "scripts": {
     {{#if ts}}
-    "build:sit": "npx rollup -c build/rollup.config.sit.ts --configPlugin typescript --bundleConfigAsCjs",
-    "build:pre": "npx rollup -c build/rollup.config.pre.ts --configPlugin typescript --bundleConfigAsCjs",
-    "build:prd": "npx rollup -c build/rollup.config.prd.ts --configPlugin typescript --bundleConfigAsCjs"
+    "build:sit": "NODE_ENV=sit rollup -c build/rollup.config.sit.ts --configPlugin typescript --bundleConfigAsCjs",
+    "build:pre": "NODE_ENV=pre rollup -c build/rollup.config.pre.ts --configPlugin typescript --bundleConfigAsCjs",
+    "build:prd": "NODE_ENV=prd rollup -c build/rollup.config.prd.ts --configPlugin typescript --bundleConfigAsCjs"
     {{else}}
-    "build:sit": "npx rollup -c build/rollup.config.sit.js",
-    "build:pre": "npx rollup -c build/rollup.config.pre.js",
-    "build:prd": "npx rollup -c build/rollup.config.prd.js"
+    "build:sit": "NODE_ENV=sit rollup -c build/rollup.config.sit.js",
+    "build:pre": "NODE_ENV=pre rollup -c build/rollup.config.pre.js",
+    "build:prd": "NODE_ENV=prd rollup -c build/rollup.config.prd.js"
     {{/if}}
   },
   "keywords": [],

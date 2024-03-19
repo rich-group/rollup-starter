@@ -1,1 +1,1 @@
-localStorage.setItem('CUPSHE_VERSION', JSON.stringify(process.env.VERSIONS))
+console.log(process.env.NODE_ENV)
