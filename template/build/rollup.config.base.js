@@ -15,13 +15,13 @@ const banner = `/**
 export default {
   input: './src/index.ts',
   output: [{
-    file: 'dist/resource.bundle.js',
-    name: 'RMANAGER', // UMD 导出全局变量名
+    file: 'dist/resource.common.js',
+    name: pkg.name, // UMD 导出全局变量名
     banner,
     format: 'umd'
   }, {
-    file: 'dist/resource.dist.js',
-    name: 'RMANAGER', // UMD 导出全局变量名
+    file: 'dist/resource.min.js',
+    name: pkg.name, // UMD 导出全局变量名
     banner,
     format: 'umd',
     plugins: [
